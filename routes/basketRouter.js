@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-router.get('/favorites', async (req, res) => {
-  res.render('favorites');
+router.get('/basket', async (req, res) => {
+  res.render('basket');
 });
 
 module.exports = router;
