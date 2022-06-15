@@ -1,0 +1,40 @@
+<div class="row g-3">
+  <div class="col-6 align-self-center mb-6">
+    <h2 class="mb-3">Создай себе носок!</h2>
+    <form class='login' name='generator' method='post' action='/cart'>
+      // ЦВЕТ
+      <span>Выбери цвет:</span>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="color" id="colorRed">
+          <label class="form-check-label" for="colorRed">Красный</label>
+        <input class="form-check-input" type="radio" name="color" id="colorYellow">
+          <label class="form-check-label" for="colorYellow">Жёлтый</label>
+      </div>
+
+      // УЗОР
+      <span>Выбери узор:</span>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pattern" id="pattern1">
+          <label class="form-check-label" for="pattern1">Узор 1</label>
+        <input class="form-check-input" type="radio" name="pattern" id="pattern2">
+          <label class="form-check-label" for="pattern2">Узор 2</label>
+      </div>
+      {{!-- <label for="color" class="form-label mb-3">Цвет</label>
+      <select id="color" class="form-select" aria-label="Выбор цвета носка">
+        <option value="Красный">Красный</option>
+        <option value="Жёлтый">Жёлтый</option>
+      </select> --}}
+
+      // КАРТИНКА
+      <span>Выбери картинку:</span>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pic" id="nikolas">
+          <label class="form-check-label" for="nikolas">Николас Кейдж</label>
+        <input class="form-check-input" type="radio" name="pic" id="doge">
+          <label class="form-check-label" for="doge">Doge</label>
+      </div>
+
+      <button type='submit' value='Войти' class="button col-6 btn-lg btn-primary mt-3">Войти</button>
+    </form>
+  </div>
+</div>
