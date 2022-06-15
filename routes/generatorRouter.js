@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-router.get('/favorites', async (req, res) => {
-  res.render('favorites');
+router.get('/generator', async (req, res) => {
+  res.render('generator');
 });
 
 module.exports = router;
