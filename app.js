@@ -8,6 +8,10 @@ const FileStore = require('session-file-store')(session);
 
 const homeRouter = require('./routes/homeRouter');
 const userRouter = require('./routes/userRouter');
+const generatorRouter = require('./routes/generatorRouter');
+const favoritesRouter = require('./routes/favoritesRouter');
+
+
 
 const PORT = process.env.PORT ?? 3000;
 
@@ -18,6 +22,8 @@ app.set('view engine', 'hbs');
 
 app.use('/', homeRouter);
 app.use('/user', userRouter);
+app.use('/generator', generatorRouter);
+app.use('/favorites', favoritesRouter);
 
 app.listen(PORT, () => {
   console.log('server start on ', PORT, '...');
