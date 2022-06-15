@@ -47,8 +47,8 @@ router.route('/signup')
 router.route('/logout')
   .get((req, res) => {
     req.session.destroy();
-    res.clearCookie('sid').redirect('home');
+    res.clearCookie('sid').redirect('/home');
   });
+
+  
 module.exports = router;
-
-
