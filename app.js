@@ -1,0 +1,24 @@
+require('dotenv').config();
+const express = require('express');
+const hbs = require('hbs');
+const morgan = require('morgan');
+const path = require('path');
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
+
+const homeRouter = require('./routes/homeRouter');
+const userRouter = require('./routes/userRouter');
+
+const PORT = process.env.PORT ?? 3000;
+
+const app = express();
+
+hbs.registerPartials(path.join(process.env.PWD, '/views/partials'));
+app.set('view engine', 'hbs');
+
+app.use('/', homeRouter);
+app.use('/user', userRouter);
+
+app.listen(PORT, () => {
+  console.log('server start on ', PORT, '...');
+});
