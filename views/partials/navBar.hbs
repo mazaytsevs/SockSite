@@ -1,3 +1,10 @@
+<div class="hello"> <h1>
+ {{#if user}}
+          Hello, {{user.name}}
+          {{/if}}
+    </h1>
+    </div>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +16,7 @@
         <a class="nav-link active" aria-current="page" href="/user/signin">Вход</a>
         <a class="nav-link active" href="/user/signup">Регистрация</a>
         <a class="nav-link active" href="/favorites/favorites">Избранное</a>
-        <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Корзина</a>
+        <a class="nav-link active" href="/basket/basket" tabindex="-1" aria-disabled="true">Корзина</a>
       </div>
     </div>
   </div>
