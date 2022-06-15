@@ -1,23 +1,25 @@
-{
+module.exports = {
+
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
+    "username": "admin",
+    "password": "123",
+    "database": "socker_site",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgresql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "username": "admin",
+    "password": "123",
+    "database": "socker_site",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgresql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
+    "username": "admin",
+    "password": "123",
+    "database": "socker_site",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgresql"
   }
+  
 }
