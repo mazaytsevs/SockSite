@@ -1,23 +1,36 @@
 <div class="row g-3">
   <div class="col-6 align-self-center mb-6">
     <h2 class="mb-3">Создай себе носок!</h2>
+
+    <div class="output">
+      
+    </div>
+
     <form class='login' name='generator' method='post' action='/cart'>
-      // ЦВЕТ
+      {{!-- ЦВЕТ --}}
       <span>Выбери цвет:</span>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="color" id="colorRed">
+        <p class="color1">
+          <input class="form-check-input" type="radio" name="color" id="colorRed">
           <label class="form-check-label" for="colorRed">Красный</label>
-        <input class="form-check-input" type="radio" name="color" id="colorYellow">
+        </p>
+        <p class="color2">
+          <input class="form-check-input" type="radio" name="color" id="colorYellow">
           <label class="form-check-label" for="colorYellow">Жёлтый</label>
+        </p>
       </div>
 
-      // УЗОР
+      {{!-- УЗОР --}}
       <span>Выбери узор:</span>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="pattern" id="pattern1">
+        <p class="pattern1">
+          <input class="form-check-input" type="radio" name="pattern" id="pattern1">
           <label class="form-check-label" for="pattern1">Узор 1</label>
-        <input class="form-check-input" type="radio" name="pattern" id="pattern2">
+        </p>
+        <p class="pattern2">
+          <input class="form-check-input" type="radio" name="pattern" id="pattern2">
           <label class="form-check-label" for="pattern2">Узор 2</label>
+        </p>
       </div>
       {{!-- <label for="color" class="form-label mb-3">Цвет</label>
       <select id="color" class="form-select" aria-label="Выбор цвета носка">
@@ -25,16 +38,21 @@
         <option value="Жёлтый">Жёлтый</option>
       </select> --}}
 
-      // КАРТИНКА
+      {{!-- КАРТИНКА --}}
       <span>Выбери картинку:</span>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="pic" id="nikolas">
+        <p class="pic1">
+          <input class="form-check-input" type="radio" name="pic" id="nikolas" value="nikolas">
           <label class="form-check-label" for="nikolas">Николас Кейдж</label>
-        <input class="form-check-input" type="radio" name="pic" id="doge">
+        </p>
+        <p class="pic2">
+          <input class="form-check-input" type="radio" name="pic" id="doge" value="doge">
           <label class="form-check-label" for="doge">Doge</label>
+        </p>
       </div>
 
-      <button type='submit' value='Войти' class="button col-6 btn-lg btn-primary mt-3">Войти</button>
+      <button type='submit' class="button col-4 btn-lg btn-primary mt-3">В избранное</button>
+      <button type='submit' class="button col-4 btn-lg btn-primary mt-3">В корзину</button>
     </form>
   </div>
 </div>
