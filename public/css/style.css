@@ -1,0 +1,179 @@
+.material-symbols-outlined {
+  transition: all 0.15s;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.material-symbols-outlined.filled {
+  transition: all 0.15s;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+body {
+  background-color: #ddd;
+  font-family: "PT Sans", sans-serif;
+  color: #111;
+  font-size: 16px;
+  margin: 0px;
+}
+
+.navbar {
+  box-shadow: rgba(50, 50, 93, 0.2) 0px 10px 20px -5px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  margin-bottom: 2rem;
+}
+
+#navbarNav {
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #461ca7;
+}
+
+p {
+  margin-bottom: 0px!important;
+}
+
+.content {
+  justify-content: center;
+}
+
+/*
+.card {
+  margin: 0px 10px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.card-taken {
+  transform: translateX(1000px) translateY(-700px) scale(0.2);
+  transition: transform 0.5s;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  line-clamp: 7;
+  box-orient: vertical;
+}
+
+.card-img-top {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.navbar-brand {
+  display: flex;
+}
+*/
+
+.a-button {
+  height: 38px;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
+.card-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.likes-count {
+  margin-left: 0.3rem;
+}
+
+.card-buttons .like-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.card-buttons .like-on {
+  background-color: #fd2d6d;
+  border-color: #b11f4c;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+
+.card-buttons .like-on:hover {
+  background-color: #b5204e;
+  transition: all 0.2s;
+}
+
+.card-small .card-text {
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  font-size: 0.75rem;
+}
+
+/* .like {
+  width: 24px;
+  height: 24px;
+  background-size: 24px 24px;
+  background-position: center;
+} */
+
+.btn {
+  min-width: 48px;
+}
+
+/* АДМИНСКОЕ */
+
+.edit-input {
+  width: 100%;
+  margin-top: 0;
+}
+
+.header-edit-input {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.readonly,
+.readonly:active,
+.readonly:focus-visible {
+  border: 0;
+  outline: 0;
+  cursor: default;
+  border: rgba(255, 255, 255, 0) 1px solid;
+}
+
+.btn-success span {
+  color: #ffffff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* @media (max-width: 767px) {
+} */
+
+/* @media (min-width: 768px) and (max-width: 1400px) {
+} */
