@@ -1,32 +1,36 @@
 const router = require('express').Router();
-const { Cart, Sock, Pattern, Picture, Combination } = require('../db/models');
+const { Cart, Sock, Pattern, Picture, Combination, User } = require('../db/models');
 
 router.get('/', async (req, res) => {
-  let cart;
   let combination;
   try {
-    // carts = await Cart.findAll({
-    //   // include: [{
-    //   //   model: User
-    //   // }]
-    // })
-    cart = await Cart.findAll({
-      where: {
-          user_id: 1, // подставить полученного юзера
-        },
-    })
-    combination = await Combination.findAll({
-      // where: {
-      //   id: 1, // подставить полученного юзера
-      // },
+    
+    combination = await User.findOne({
+      where: {id: 1},
       include: [
-        { model: Sock }, { model: Pattern }, { model: Picture }
+        {
+          model: Combination,
+          as: 'UserCart',
+          include: [{model: Sock}, {model: Pattern}, {model: Picture} ]
+        },
       ],
-      raw: true
-    });
-    console.log(JSON.parse(JSON.stringify(cart)));
-    console.log(JSON.parse(JSON.stringify(combination)));
-  return res.render('basket'); // передаю в хбс полученный массив с объектами
+      // raw: true
+      });
+        // console.log('combination::::::::::::::', JSON.parse(JSON.stringify(combination.UserCart[0])));
+        combination = {
+          name: combination.name,
+          id: combination.id,
+          carts: combination.UserCart.map(el=>({
+            pic_url: el.Picture.pic_url,
+            pattern_url: el.Pattern.pattern_url,
+            pattern_name: el.Pattern.pattern_name,
+            sock_url: el.Sock.hex,
+            qty: el.Cart.qty
+          }))
+        }
+        console.log('combination: ', JSON.parse(JSON.stringify(combination)));
+        // console.log('UserCart:::::::::::::',JSON.parse(JSON.stringify(combination[0].UserCart)));
+    return res.render('cart', combination); // передаю в хбс полученный массив с объектами
   } catch (error) {
     // return res.render('error', {
     //   message: 'Не удалось получить записи из базы данных.',
@@ -37,6 +41,3 @@ router.get('/', async (req, res) => {
 });
 
 module.exports = router;
-
-// this.belongsToMany(Combination, {through: 'Cart', foreignKey: 'user_id', as: "UserCart"}),
-// this.belongsToMany(Combination, {through: 'Favorite', foreignKey: 'user_id', as: "UserFavorite"})

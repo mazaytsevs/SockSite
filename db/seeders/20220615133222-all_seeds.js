@@ -8,6 +8,20 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        name: 'Irina Socks',
+        email: '2fc@yandex.ru',
+        password: '123',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: 'July Kuku',
+        email: 'vcv@yandex.ru',
+        password: '123',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ];
     const socks = [
       {
@@ -37,6 +51,12 @@ module.exports = {
     ];
     const pics = [
       {
+        pic_name: '(нет)',
+        pic_url: 'transparent.png',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
         pic_name: 'Геометрия',
         pic_url: 'picture1.png',
         createdAt: new Date(),
@@ -56,6 +76,12 @@ module.exports = {
       },
     ];
     const patterns = [
+      {
+        pattern_name: '(нет)',
+        pattern_url: 'transparent.png',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
       {
         pattern_name: 'Сетка',
         pattern_url: 'pattern1.png',
@@ -101,6 +127,27 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        sock_id: 1,
+        pattern_id: 3,
+        pic_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        sock_id: 3,
+        pattern_id: 1,
+        pic_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        sock_id: 4,
+        pattern_id: 5,
+        pic_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ];
     const carts = [
       {
@@ -110,26 +157,79 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        user_id: 1,
+        comb_id: 2,
+        qty: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 1,
+        comb_id: 3,
+        qty: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 2,
+        comb_id: 4,
+        qty: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 3,
+        comb_id: 3,
+        qty: 5,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 2,
+        comb_id: 4,
+        qty: 58,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ];
     const favorites = [
       {
         user_id: 1,
+        comb_id: 4,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 2,
+        comb_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 3,
+        comb_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 3,
         comb_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
     ];
 
-    // await queryInterface.bulkInsert('Users', users);
-    // await queryInterface.bulkInsert('Socks', socks);
-    // await queryInterface.bulkInsert('Patterns', patterns);
-    // await queryInterface.bulkInsert('Pictures', pics);
+    await queryInterface.bulkInsert('Users', users);
+    await queryInterface.bulkInsert('Socks', socks);
+    await queryInterface.bulkInsert('Patterns', patterns);
+    await queryInterface.bulkInsert('Pictures', pics);
     await queryInterface.bulkInsert('Combinations', combinations);
-    // await queryInterface.bulkInsert('Carts', carts);
-    // await queryInterface.bulkInsert('Favorites', favorites);
+    await queryInterface.bulkInsert('Carts', carts);
+    await queryInterface.bulkInsert('Favorites', favorites);
   },
 
-  async down(queryInterface, Sequelize) {
+  async down (queryInterface, Sequelize) {
     await queryInterface.bulkDelete('Users', null, {});
     await queryInterface.bulkDelete('Socks', null, {});
     await queryInterface.bulkDelete('Patterns', null, {});
@@ -137,5 +237,5 @@ module.exports = {
     await queryInterface.bulkDelete('Combinations', null, {});
     await queryInterface.bulkDelete('Carts', null, {});
     await queryInterface.bulkDelete('Favorites', null, {});
-  },
+  }
 };
