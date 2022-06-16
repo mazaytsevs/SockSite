@@ -2,19 +2,19 @@
 
 {{#each combination}}
 <div name="product">
+  {{"Pattern.pattern_name"}}
   <div class="card" style="width: 18rem;">
       <div class="col-6 socks-output-container">
         {{!-- ОТОБРАЖЕНИ НОСКА --}}
         <div id="sock">
-          <div><img src="/img/pictures/{{"Picture.pic_url"}}" height="600" width="600"></div>
-          <div><img src="/img/pictures/{{"Pattern.pattern_name"}}" height="600" width="600"></div>
+          {{!-- ТУТ БУДЕТ ЦВЕТ --}}
+          <div><img src="/img/patterns/{{"UserCart.Pattern.pattern_url"}}" height="600" width="600"></div>
+          <div><img src="/img/pictures/{{"UserCart.Picture.pic_url"}}" height="600" width="600"></div>
           <div><img src="/img/constructor.png" height="600" width="600"></div>
         </div>
-
       </div>
     <div class="card-body">
       <input type="checkbox">
-      {{"Picture.pic_name"}}
   </div>   
       <h5 class="card-title"></h5>
       <p class="card-text"></p>

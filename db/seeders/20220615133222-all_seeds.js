@@ -8,6 +8,20 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        name: 'Irina Socks',
+        email: '2fc@yandex.ru',
+        password: '123',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: 'July Kuku',
+        email: 'vcv@yandex.ru',
+        password: '123',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ];
     const socks = [
       {
@@ -101,6 +115,27 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        sock_id: 1,
+        pattern_id: 3,
+        pic_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        sock_id: 3,
+        pattern_id: 1,
+        pic_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        sock_id: 4,
+        pattern_id: 5,
+        pic_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ];
     const carts = [
       {
@@ -110,10 +145,63 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        user_id: 1,
+        comb_id: 2,
+        qty: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 1,
+        comb_id: 3,
+        qty: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 2,
+        comb_id: 4,
+        qty: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 3,
+        comb_id: 3,
+        qty: 5,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 2,
+        comb_id: 4,
+        qty: 58,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ];
     const favorites = [
       {
         user_id: 1,
+        comb_id: 4,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 2,
+        comb_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 3,
+        comb_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        user_id: 3,
         comb_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
