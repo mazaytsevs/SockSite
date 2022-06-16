@@ -30,11 +30,3 @@ router.get('/', async (req, res) => {
 });
 
 module.exports = router;
-
-// this.belongsToMany(Combination, {through: 'Cart', foreignKey: 'user_id', as: "UserCart"}),
-// this.belongsToMany(Combination, {through: 'Favorite', foreignKey: 'user_id', as: "UserFavorite"})
-// this.belongsToMany(User, {through: 'Cart', foreignKey: 'user_id', as: "UserCart"}),
-// this.belongsToMany(User, {through: 'Favorite', foreignKey: 'user_id', as: "UserFavorite"}),
-// this.belongsTo(Pattern, { foreignKey: 'pattern_id' }),
-// this.belongsTo(Picture, { foreignKey: 'pic_id' }),
-// this.belongsTo(Sock, { foreignKey: 'sock_id' })
