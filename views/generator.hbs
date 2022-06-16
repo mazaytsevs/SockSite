@@ -12,7 +12,7 @@
       </div>
 
       <div class="col-6 socks-form">
-      <form class='login' name='generator' method='post' action='/cart'>
+      <form class='sock-form' name='generator' method='post' action='/cart'>
         {{!-- ЦВЕТ --}}
         <span>Выбери цвет:</span>
           <div class="form-check">
@@ -29,27 +29,23 @@
           {{!-- УЗОР --}}
           <span>Выбери узор:</span>
           <div class="form-check">
-            <p class="pattern1">
-              <input class="form-check-input" type="radio" name="pattern" id="pattern1">
-              <label class="form-check-label" for="pattern1">Узор 1</label>
+            {{#each patterns}}
+            <p class="pattern_{{pattern_name}}">
+              <input class="form-check-input" type="radio" name="pattern" id="pattern{{id}}">
+              <label class="form-check-label" for="pattern{{id}}">{{pattern_name}}</label>
             </p>
-            <p class="pattern2">
-              <input class="form-check-input" type="radio" name="pattern" id="pattern2">
-              <label class="form-check-label" for="pattern2">Узор 2</label>
-            </p>
+            {{/each}}
           </div>
 
           {{!-- КАРТИНКА --}}
           <span>Выбери картинку:</span>
           <div class="form-check">
-            <p class="pic1">
-              <input class="form-check-input" type="radio" name="pic" id="nikolas" value="nikolas">
-              <label class="form-check-label" for="nikolas">Николас Кейдж</label>
+            {{#each pictures}}
+            <p class="pattern_{{pic_name}}">
+              <input class="form-check-input" type="radio" name="pic" id="pic{{id}}">
+              <label class="form-check-label" for="pic{{id}}">{{pic_name}}</label>
             </p>
-            <p class="pic2">
-              <input class="form-check-input" type="radio" name="pic" id="doge" value="doge">
-              <label class="form-check-label" for="doge">Doge</label>
-            </p>
+            {{/each}}
           </div>
 
           <button type='button' class="col-4 btn-lg btn-primary mt-3">В избранное</button>
