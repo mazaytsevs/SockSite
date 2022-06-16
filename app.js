@@ -11,7 +11,7 @@ const homeRouter = require('./routes/homeRouter');
 const userRouter = require('./routes/userRouter');
 const generatorRouter = require('./routes/generatorRouter');
 const favoritesRouter = require('./routes/favoritesRouter');
-const basketRouter = require('./routes/basketRouter');
+const cartRouter = require('./routes/cartRouter');
 
 const PORT = process.env.PORT ?? 3000;
 
@@ -44,7 +44,7 @@ app.use('/', homeRouter);
 app.use('/user', userRouter);
 app.use('/generator', generatorRouter);
 app.use('/favorites', favoritesRouter);
-app.use('/basket', basketRouter);
+app.use('/cart', cartRouter);
 
 app.listen(PORT, () => {
   console.log('server start on ', PORT, '...');
