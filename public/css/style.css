@@ -44,6 +44,48 @@ p {
   justify-content: center;
 }
 
+/* НОСКОГЕНЕРАТОР */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.generator-content {
+  display: flex;
+}
+
+#sock {
+  width: 600px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: red 1px solid;
+}
+
+#sock > * {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 600px;
+  height: 600px;
+  background-size: 600px 600px;
+}
+
+#sock-constructor {
+  background-image: url('/img/constructor.png');
+}
+
+#sock-pattern {
+  background-image: url('/img/patterns/pattern1.png');
+}
+
+#sock-picture {
+  background-image: url('/img/pictures/pic3.jpg');
+}
+
 /*
 .card {
   margin: 0px 10px;
