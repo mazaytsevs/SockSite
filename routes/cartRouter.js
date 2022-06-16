@@ -1,24 +1,41 @@
 const router = require('express').Router();
-const { Cart } = require('../db/models');
+const {
+  Cart, Sock, Pattern, Picture, Combination,
+} = require('../db/models');
 
 router.get('/', async (req, res) => {
-  let carts;
+  let cart;
+  let combination;
   try {
     // carts = await Cart.findAll({
     //   // include: [{
     //   //   model: User
     //   // }]
     // })
-    carts = await Cart.findAll(); // объединяю таблицу Ентри и Юзер и отбрасываю лишнее
-    console.log(JSON.parse(JSON.stringify(carts)));
-  // return res.render('carts/index', { carts }); // передаю в хбс полученный массив с объектами
+    cart = await Cart.findAll({
+      where: {
+        user_id: 1, // подставить полученного юзера
+      },
+    });
+    combination = await Combination.findAll({
+      // where: {
+      //   id: 1, // подставить полученного юзера
+      // },
+      include: [
+        { model: Sock }, { model: Pattern }, { model: Picture },
+      ],
+      raw: true,
+    });
+    console.log(JSON.parse(JSON.stringify(cart)));
+    console.log(JSON.parse(JSON.stringify(combination)));
+    return res.render('cart'); // передаю в хбс полученный массив с объектами
   } catch (error) {
     // return res.render('error', {
     //   message: 'Не удалось получить записи из базы данных.',
     //   error: {}
     // });
-    console.log('error');
+    console.log(error);
   }
 });
 
-
+module.exports = router;
