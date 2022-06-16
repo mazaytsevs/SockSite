@@ -1,17 +1,19 @@
 const router = require('express').Router();
-const { Cart, Sock, Pattern, Picture, Combination, User } = require('../db/models');
+const {
+  Cart, Sock, Pattern, Picture, Combination, User,
+} = require('../db/models');
 
 router.get('/', async (req, res) => {
   let combination;
   try {
-    
     combination = await User.findOne({
       where: {id: req.session.user.id},
+
       include: [
         {
           model: Combination,
           as: 'UserCart',
-          include: [{model: Sock}, {model: Pattern}, {model: Picture} ]
+          include: [{ model: Sock }, { model: Pattern }, { model: Picture }],
         },
       ],
       });
@@ -27,6 +29,7 @@ router.get('/', async (req, res) => {
           }))
         }
         console.log('combination: ', JSON.parse(JSON.stringify(combination)));
+
     return res.render('cart', combination); // передаю в хбс полученный массив с объектами
   } catch (error) {
     // return res.render('error', {

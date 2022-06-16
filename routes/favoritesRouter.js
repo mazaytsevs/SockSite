@@ -34,7 +34,9 @@ router.get('/', async (req, res) => {
     //   error: {}
     // });
     console.log(error);
+
   }
+
 });
 
 router.post('/', async (req, res) => {
