@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate( { Combination }) {
       // define association here
-      this.belongsToMany(Combination, {through: 'Cart', foreignKey: 'user_id', as: "Cart"}),
-      this.belongsToMany(Combination, {through: 'Favorite', foreignKey: 'user_id', as: "Favorite"})
+      this.belongsToMany(Combination, {through: 'Cart', foreignKey: 'user_id', as: "UserCart"}),
+      this.belongsToMany(Combination, {through: 'Favorite', foreignKey: 'user_id', as: "UserFavorite"})
     }
   }
   User.init({
