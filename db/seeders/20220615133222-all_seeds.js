@@ -37,6 +37,12 @@ module.exports = {
     ];
     const pics = [
       {
+        pic_name: '(нет)',
+        pic_url: 'transparent.png',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
         pic_name: 'Геометрия',
         pic_url: 'picture1.png',
         createdAt: new Date(),
@@ -56,6 +62,12 @@ module.exports = {
       },
     ];
     const patterns = [
+      {
+        pattern_name: '(нет)',
+        pattern_url: 'transparent.png',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
       {
         pattern_name: 'Сетка',
         pattern_url: 'pattern1.png',
@@ -120,13 +132,13 @@ module.exports = {
       },
     ];
 
-    // await queryInterface.bulkInsert('Users', users);
-    // await queryInterface.bulkInsert('Socks', socks);
-    // await queryInterface.bulkInsert('Patterns', patterns);
-    // await queryInterface.bulkInsert('Pictures', pics);
+    await queryInterface.bulkInsert('Users', users);
+    await queryInterface.bulkInsert('Socks', socks);
+    await queryInterface.bulkInsert('Patterns', patterns);
+    await queryInterface.bulkInsert('Pictures', pics);
     await queryInterface.bulkInsert('Combinations', combinations);
-    // await queryInterface.bulkInsert('Carts', carts);
-    // await queryInterface.bulkInsert('Favorites', favorites);
+    await queryInterface.bulkInsert('Carts', carts);
+    await queryInterface.bulkInsert('Favorites', favorites);
   },
 
   async down(queryInterface, Sequelize) {
