@@ -1,19 +1,19 @@
 <h1>Избранное</h1>
 
-{{#each favorite}}
+{{#each favorites}}
 <div name="productCart">
-  {{"Pattern.pattern_name"}}
+  {{pattern_name}}
   <div class="col-6 socks-output-container">
       {{!-- ОТОБРАЖЕНИ НОСКА --}}
       <div id="sock">
         {{!-- ТУТ БУДЕТ ЦВЕТ --}}
-        <div><img src="/img/patterns/{{"Pattern.pattern_url"}}" height="600" width="600"></div>
-        <div><img src="/img/pictures/{{"Picture.pic_url"}}" height="600" width="600"></div>
+        <div><img src="/img/patterns/{{pattern_url}}" height="600" width="600"></div>
+        <div><img src="/img/pictures/{{pic_url}}" height="600" width="600"></div>
         <div><img src="/img/constructor.png" height="600" width="600"></div>
       </div>
     </div>
     <div class="card-body">
-      <h5 class="card-title">{{"Pattern.pattern_name"}}</h5>
+      <h5 class="card-title">{{pattern_name}}</h5>
       <p class="card-text"></p>
       <a href="#" class="btn btn-primary">В Корзину</a>
       <a href="#" class="btn btn-primary">Удалить</a>
