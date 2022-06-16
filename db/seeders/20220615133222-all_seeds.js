@@ -95,9 +95,9 @@ module.exports = {
     ];
     const combinations = [
       {
-        sock_id: 1,
+        sock_id: 2,
         pattern_id: 2,
-        pic_id: 3,
+        pic_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -120,13 +120,13 @@ module.exports = {
       },
     ];
 
-    await queryInterface.bulkInsert('Users', users);
-    await queryInterface.bulkInsert('Socks', socks);
-    await queryInterface.bulkInsert('Patterns', patterns);
-    await queryInterface.bulkInsert('Pictures', pics);
+    // await queryInterface.bulkInsert('Users', users);
+    // await queryInterface.bulkInsert('Socks', socks);
+    // await queryInterface.bulkInsert('Patterns', patterns);
+    // await queryInterface.bulkInsert('Pictures', pics);
     await queryInterface.bulkInsert('Combinations', combinations);
-    await queryInterface.bulkInsert('Carts', carts);
-    await queryInterface.bulkInsert('Favorites', favorites);
+    // await queryInterface.bulkInsert('Carts', carts);
+    // await queryInterface.bulkInsert('Favorites', favorites);
   },
 
   async down(queryInterface, Sequelize) {
