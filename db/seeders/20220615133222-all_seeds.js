@@ -1,7 +1,5 @@
-'use strict';
-
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     const users = [
       {
         name: 'Marina Noname',
@@ -75,7 +73,7 @@ module.exports = {
         pattern_url: 'pattern3.jpg',
         createdAt: new Date(),
         updatedAt: new Date(),
-      },``
+      },
       {
         pattern_name: 'Пёсики',
         pattern_url: 'pattern4.jpg',
@@ -131,7 +129,7 @@ module.exports = {
     await queryInterface.bulkInsert('Favorites', favorites);
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     await queryInterface.bulkDelete('Users', null, {});
     await queryInterface.bulkDelete('Socks', null, {});
     await queryInterface.bulkDelete('Patterns', null, {});
@@ -139,5 +137,5 @@ module.exports = {
     await queryInterface.bulkDelete('Combinations', null, {});
     await queryInterface.bulkDelete('Carts', null, {});
     await queryInterface.bulkDelete('Favorites', null, {});
-  }
+  },
 };
