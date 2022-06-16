@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Cart, Sock, Pattern, Picture, Combination, User } = require('../db/models');
+const { Favorite, Cart, Sock, Pattern, Picture, Combination, User } = require('../db/models');
 
 router.get('/', async (req, res) => {
   let favorite;
   try {
     
     favorite = await User.findOne({
-      where: {id: 1},
+      where: {id: req.session.user.id},
       include: [
         {
           model: Combination,
@@ -14,9 +14,7 @@ router.get('/', async (req, res) => {
           include: [{model: Sock}, {model: Pattern}, {model: Picture} ]
         },
       ],
-      // raw: true
       });
-        // console.log('combination::::::::::::::', JSON.parse(JSON.stringify(combination.UserCart[0])));
         favorite = {
           name: favorite.name,
           id: favorite.id,
@@ -29,7 +27,6 @@ router.get('/', async (req, res) => {
           }))
         }
         console.log('favorites: ', JSON.parse(JSON.stringify(favorite)));
-        // console.log('UserCart:::::::::::::',JSON.parse(JSON.stringify(favorite[0].UserCart)));
     return res.render('favorites', favorite); // передаю в хбс полученный массив с объектами
   } catch (error) {
     // return res.render('error', {
@@ -37,6 +34,19 @@ router.get('/', async (req, res) => {
     //   error: {}
     // });
     console.log(error);
+  }
+});
+
+router.post('/', async (req, res) => {
+  try {
+    const {color_id, pattern_id, picture_id} = req.body
+    const [ id ] = await Combination.findOrCreate({
+      where: {sock_id: color_id, pattern_id, pic_id: picture_id}
+    })
+    await Favorite.create({user_id: req.session.user.id, comb_id: JSON.parse(JSON.stringify(id.id))})
+    res.sendStatus(200)
+  } catch (err) {
+    console.log(err);
   }
 });
 
