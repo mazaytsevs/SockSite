@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
-// const { User } = require('../db/models');
+const { User } = require('../db/models');
 
 router.route('/signin')
   .get((req, res) => {
@@ -10,9 +10,9 @@ router.route('/signin')
     const { email, password } = req.body;
     if (email && password) {
       const currentUser = await User.findOne({ where: { email } });
-      if (currentUser && await bcrypt.compare(password, currentUser.pass)) {
+      if (currentUser && await bcrypt.compare(password, currentUser.password)) {
         req.session.user = { id: currentUser.id, name: currentUser.name };
-        return res.redirect('/home');
+        return res.redirect('/');
       }
       res.redirect('/user/signin');
     } else {
@@ -31,10 +31,10 @@ router.route('/signup')
         const newUser = await User.create({
           name,
           email,
-          pass: await bcrypt.hash(password, Number(process.env.SALTROUNDS)),
+          password: await bcrypt.hash(password, Number(process.env.SALTROUNDS)),
         });
         req.session.user = { id: newUser.id, name: newUser.name };
-        return res.redirect('/home');
+        return res.redirect('/');
       } catch (err) {
         console.log('Не получилось зарегистрировать', err);
         res.redirect('/user/signup');
@@ -47,7 +47,7 @@ router.route('/signup')
 router.route('/logout')
   .get((req, res) => {
     req.session.destroy();
-    res.clearCookie('sid').redirect('/home');
+    res.clearCookie('sid').redirect('/');
   });
 
   
