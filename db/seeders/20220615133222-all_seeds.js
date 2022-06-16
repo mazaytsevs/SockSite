@@ -118,6 +118,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+
     ];
 
     // await queryInterface.bulkInsert('Users', users);

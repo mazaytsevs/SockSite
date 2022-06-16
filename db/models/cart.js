@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Cart extends Model {
     /**
@@ -10,13 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+
       // define association here
     }
   }
   Cart.init({
     user_id: DataTypes.INTEGER,
     comb_id: DataTypes.INTEGER,
-    qty: DataTypes.INTEGER
+    qty: DataTypes.INTEGER,
 
   }, {
     sequelize,
