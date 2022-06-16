@@ -1,10 +1,9 @@
 const checkSession = (req, res, next) => {
-  console.log('req.session ====>>', req.session);
 
-  if (req.session.userid) {
+  if (req.session.user) {
     res.locals.user = {
-      name: req.session.userName,
-      id: req.session.userid,
+      name: req.session.user.name,
+      id: req.session.user.id,
     };
 
     return next();

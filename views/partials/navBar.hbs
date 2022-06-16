@@ -1,9 +1,4 @@
-{{!-- <div class="hello"> <h1>
- {{#if user}}
-          Hello, {{user.name}}
-          {{/if}}
-    </h1>
-    </div> --}}
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -14,12 +9,12 @@
       <div class="navbar-nav">
          <a class="nav-link active" href="/" tabindex="-1" aria-disabled="true">Главная</a>
         
-        
+        {{#if user.name}}
+        <a class="nav-link active" href="/user/logout">Выход</a>
+        {{else}}
         <a class="nav-link active" href="/user/signup">Регистрация</a>
         <a class="nav-link active" aria-current="page" href="/user/signin">Вход</a>
-        
-        <a class="nav-link active" href="/user/logout">Выход</a>
-        
+        {{/if}}
         <a class="nav-link active" href="/favorites">Избранное</a>
         <a class="nav-link active" href="/cart" tabindex="-1" aria-disabled="true">Корзина</a>
       
