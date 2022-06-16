@@ -51,6 +51,12 @@ module.exports = {
     ];
     const pics = [
       {
+        pic_name: '(нет)',
+        pic_url: 'transparent.png',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
         pic_name: 'Геометрия',
         pic_url: 'picture1.png',
         createdAt: new Date(),
@@ -70,6 +76,12 @@ module.exports = {
       },
     ];
     const patterns = [
+      {
+        pattern_name: '(нет)',
+        pattern_url: 'transparent.png',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
       {
         pattern_name: 'Сетка',
         pattern_url: 'pattern1.png',
