@@ -37,60 +37,60 @@ module.exports = {
         updatedAt: new Date(),
       },
     ];
-    const patterns = [
+    const pics = [
       {
-        pattern_name: 'Геометрия',
-        pattern_url: 'pattern1',
+        pic_name: 'Геометрия',
+        pic_url: 'picture1.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        pattern_name: 'Круги',
-        pattern_url: 'pattern2',
+        pic_name: 'Круги',
+        pic_url: 'picture2.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        pattern_name: 'Сетка',
-        pattern_url: 'pattern3',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-      {
-        pattern_name: 'Буквы',
-        pattern_url: 'pattern4',
+        pic_name: 'Буквы',
+        pic_url: 'picture3.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
     ];
-    const pics = [
+    const patterns = [
       {
-        pic_name: 'JavaScript',
-        pic_url: 'pic1',
+        pattern_name: 'Сетка',
+        pattern_url: 'pattern1.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        pic_name: 'Николас Кейдж',
-        pic_url: 'pic2',
+        pattern_name: 'JavaScript',
+        pattern_url: 'pattern2.jpg',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        pic_name: 'Пёсики',
-        pic_url: 'pic3',
+        pattern_name: 'Николас Кейдж',
+        pattern_url: 'pattern3.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },``
+      {
+        pattern_name: 'Пёсики',
+        pattern_url: 'pattern4.jpg',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        pic_name: 'Котики',
-        pic_url: 'pic4',
+        pattern_name: 'Котики',
+        pattern_url: 'pattern5.jpg',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        pic_name: 'Совы',
-        pic_url: 'pic5',
+        pattern_name: 'Совы',
+        pattern_url: 'pattern6.jpg',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
