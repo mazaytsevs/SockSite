@@ -15,11 +15,22 @@ router.get('/', async (req, res) => {
         },
       ],
       // raw: true
-      
+      });
         // console.log('combination::::::::::::::', JSON.parse(JSON.stringify(combination.UserCart[0])));
-        console.log('combination: ', combination);
-        console.log('UserCart:::::::::::::',JSON.parse(JSON.stringify(combination.dataValues.UserCart)));
-    return res.render('cart', {combination}); // передаю в хбс полученный массив с объектами
+        combination = {
+          name: combination.name,
+          id: combination.id,
+          carts: combination.UserCart.map(el=>({
+            pic_url: el.Picture.pic_url,
+            pattern_url: el.Pattern.pattern_url,
+            pattern_name: el.Pattern.pattern_name,
+            sock_url: el.Sock.hex,
+            qty: el.Cart.qty
+          }))
+        }
+        console.log('combination: ', JSON.parse(JSON.stringify(combination)));
+        // console.log('UserCart:::::::::::::',JSON.parse(JSON.stringify(combination[0].UserCart)));
+    return res.render('cart', combination); // передаю в хбс полученный массив с объектами
   } catch (error) {
     // return res.render('error', {
     //   message: 'Не удалось получить записи из базы данных.',

@@ -1,15 +1,15 @@
 <h1>Корзина</h1>
 
-{{#each combination}}
+{{#each carts}}
 <div name="productCart">
-  {{"Pattern.pattern_name"}}
+  {{pattern_name}}
   <div class="card" style="width: 18rem;">
       <div class="col-6 socks-output-container">
         {{!-- ОТОБРАЖЕНИ НОСКА --}}
         <div id="sock">
           {{!-- ТУТ БУДЕТ ЦВЕТ --}}
-          <div><img src="/img/patterns/{{"UserCart.Pattern.pattern_url"}}" height="600" width="600"></div>
-          <div><img src="/img/pictures/{{"UserCart.Picture.pic_url"}}" height="600" width="600"></div>
+          <div><img src="/img/patterns/{{pattern_url}}" height="600" width="600"></div>
+          <div><img src="/img/pictures/{{pic_url}}" height="600" width="600"></div>
           <div><img src="/img/constructor.png" height="600" width="600"></div>
         </div>
       </div>
