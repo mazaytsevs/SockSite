@@ -1,14 +1,27 @@
 <h1>Корзина</h1>
-<div class="card" style="width: 18rem;">
-  <img src="https://sc04.alicdn.com/kf/H105873d6f75f4843aae929149076214fm.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <input type="checkbox">
-   
-    <h5 class="card-title"></h5>
-    <p class="card-text"></p>
-    <a href="#" class="btn btn-primary"></a>
+
+{{#each combination}}
+<div name="product">
+  <div class="card" style="width: 18rem;">
+      <div class="col-6 socks-output-container">
+        {{!-- ОТОБРАЖЕНИ НОСКА --}}
+        <div id="sock">
+          <div><img src="/img/pictures/{{"Picture.pic_url"}}" height="600" width="600"></div>
+          <div><img src="/img/pictures/{{"Pattern.pattern_name"}}" height="600" width="600"></div>
+          <div><img src="/img/constructor.png" height="600" width="600"></div>
+        </div>
+
+      </div>
+    <div class="card-body">
+      <input type="checkbox">
+      {{"Picture.pic_name"}}
+  </div>   
+      <h5 class="card-title"></h5>
+      <p class="card-text"></p>
+      <a href="#" class="btn btn-primary"></a>
   </div>
 </div>
+{{/each}}
 
 <div class="btn-group">
   <a href="#" class="btn btn-primary">Отправить Заказ</a>

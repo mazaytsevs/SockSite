@@ -14,7 +14,10 @@ router.get('/', async (req, res) => {
       where: {
           user_id: 1, // подставить полученного юзера
         },
+      raw: true,
     })
+    // console.log(JSON.parse(JSON.stringify(cart)));
+    // console.log('---------->', cart);
     combination = await Combination.findAll({
       // where: {
       //   id: 1, // подставить полученного юзера
@@ -24,9 +27,9 @@ router.get('/', async (req, res) => {
       ],
       raw: true
     });
-    console.log(JSON.parse(JSON.stringify(cart)));
+    // console.log(JSON.parse(JSON.stringify(cart)));
     console.log(JSON.parse(JSON.stringify(combination)));
-  return res.render('basket'); // передаю в хбс полученный массив с объектами
+  return res.render('cart', {combination}); // передаю в хбс полученный массив с объектами
   } catch (error) {
     // return res.render('error', {
     //   message: 'Не удалось получить записи из базы данных.',

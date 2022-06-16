@@ -75,7 +75,7 @@ module.exports = {
         pattern_url: 'pattern3.jpg',
         createdAt: new Date(),
         updatedAt: new Date(),
-      },``
+      },
       {
         pattern_name: 'Пёсики',
         pattern_url: 'pattern4.jpg',
@@ -122,22 +122,22 @@ module.exports = {
       },
     ];
 
-    // await queryInterface.bulkInsert('Users', users);
-    // await queryInterface.bulkInsert('Socks', socks);
-    // await queryInterface.bulkInsert('Patterns', patterns);
-    // await queryInterface.bulkInsert('Pictures', pics);
+    await queryInterface.bulkInsert('Users', users);
+    await queryInterface.bulkInsert('Socks', socks);
+    await queryInterface.bulkInsert('Patterns', patterns);
+    await queryInterface.bulkInsert('Pictures', pics);
     await queryInterface.bulkInsert('Combinations', combinations);
-    // await queryInterface.bulkInsert('Carts', carts);
-    // await queryInterface.bulkInsert('Favorites', favorites);
+    await queryInterface.bulkInsert('Carts', carts);
+    await queryInterface.bulkInsert('Favorites', favorites);
   },
 
   async down (queryInterface, Sequelize) {
-    // await queryInterface.bulkDelete('Users', null, {});
-    // await queryInterface.bulkDelete('Socks', null, {});
-    // await queryInterface.bulkDelete('Patterns', null, {});
-    // await queryInterface.bulkDelete('Pictures', null, {});
+    await queryInterface.bulkDelete('Users', null, {});
+    await queryInterface.bulkDelete('Socks', null, {});
+    await queryInterface.bulkDelete('Patterns', null, {});
+    await queryInterface.bulkDelete('Pictures', null, {});
     await queryInterface.bulkDelete('Combinations', null, {});
-    // await queryInterface.bulkDelete('Carts', null, {});
-    // await queryInterface.bulkDelete('Favorites', null, {});
+    await queryInterface.bulkDelete('Carts', null, {});
+    await queryInterface.bulkDelete('Favorites', null, {});
   }
 };
