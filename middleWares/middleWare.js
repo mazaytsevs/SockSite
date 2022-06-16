@@ -1,5 +1,5 @@
 const checkSession = (req, res, next) => {
-  console.log('req.session ====>>', req.session);
+  // console.log('req.session ====>>', req.session);
 
   if (req.session.userid) {
     res.locals.user = {
