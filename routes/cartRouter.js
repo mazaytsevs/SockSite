@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
       ],
       // raw: true
       });
-        // console.log('combination::::::::::::::', JSON.parse(JSON.stringify(combination.UserCart[0])));
         combination = {
           name: combination.name,
           id: combination.id,
