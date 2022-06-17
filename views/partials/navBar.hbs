@@ -6,22 +6,27 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <div class="nav-part">
-         <a class="nav-link active" href="/" tabindex="-1" aria-disabled="true">Главная</a>
-         <a class="nav-link active" href="/generator" tabindex="-1" aria-disabled="true">Носкогенератор</a>
+         <a class="nav-link active" href="/" tabindex="-1" aria-disabled="true"><span class="material-symbols-outlined">home</span>Главная</a>
+         <a class="nav-link active" href="/generator" tabindex="-1" aria-disabled="true"><span class="material-symbols-outlined">extension</span>Носкогенератор</a>
         </div>
 
         <div class="nav-part">
-          <a class="nav-link active" href="/cart" tabindex="-1" aria-disabled="true">Корзина</a>
           {{#if user.name}}
-          <a class="nav-link" href="#"><span class="material-symbols-outlined">person</span><b>{{user.name}}</b></a>
-          <a class="nav-link active" href="/favorites">Избранное</a>
-          <a class="nav-link active" href="/user/logout">Выход</a>
+          <a class="nav-link profile" href="#"><span class="material-symbols-outlined">person</span>{{user.name}}</a>
+          {{/if}}
+          <a class="nav-link active" href="/cart" tabindex="-1" aria-disabled="true"><span class="material-symbols-outlined">shopping_basket</span>Корзина</a>
+          {{#if user.name}}
+          <a class="nav-link active" href="/favorites"><span class="material-symbols-outlined">bookmark</span>Избранное</a>
+          <a class="nav-link active" href="/user/logout"><span class="material-symbols-outlined">logout</span>Выход</a>
           {{else}}
-          <a class="nav-link active" href="/user/signup">Регистрация</a>
-          <a class="nav-link active" aria-current="page" href="/user/signin">Вход</a>
+          <div class="nav-buttons">
+            <a class="btn btn-outline-dark" aria-current="page" href="/user/signin"><span class="material-symbols-outlined">login</span><span>Вход</span></a>
+            <a class="btn btn-outline-dark" href="/user/signup"><span class="material-symbols-outlined">person_add</span><span>Регистрация</span></a>
+          </div>
           {{/if}}
         </div>
       </div>
     </div>
   </div>
 </nav>
+

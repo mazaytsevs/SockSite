@@ -1,15 +1,21 @@
-<div class="row">
-<div class="col">
-<form action="/user/signin" method="post">
-<div class="mb-3">
-<label for="email" class="form-label">Email</label>
-<input type="text" class="form-control" id="email" name="email">
-</div>
-<div class="mb-3">
-<label for="password" class="form-label">Password</label>
-<input type="password" class="form-control" id="password" name="password">
-</div>
-<button type="submit" class="btn btn-primary">Send</button>
-</form>
-</div>
+<div class="row g-3">
+  <h1>Войдите в свой профиль</h1>
+
+  <div class="col-6 align-self-center mb-6">
+    <form action="/user/signin" method="post">
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Почта</label>
+        <input type="text" class="form-control form-control-lg" id="email" name="email" placeholder="Введите e-mail"/>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Пароль</label>
+        <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Придумайте пароль"/>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg col-12 mt-4">Войти</button>
+    
+    </form>
+  </div>
 </div>
