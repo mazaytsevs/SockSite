@@ -17,20 +17,20 @@ router.get('/', async (req, res) => {
           include: [{ model: Sock }, { model: Pattern }, { model: Picture }],
         },
       ],
-      });
-        combination = {
-          name: combination.name,
-          id: combination.id,
-          carts: combination.UserCart.map(el=>({
-            comb_id: el.id,
-            pic_url: el.Picture.pic_url,
-            pattern_url: el.Pattern.pattern_url,
-            pattern_name: el.Pattern.pattern_name,
-            sock_url: el.Sock.hex,
-            qty: el.Cart.qty
-          }))
-        }
-        console.log('combination: ', JSON.parse(JSON.stringify(combination)));
+    });
+    combination = {
+      name: combination.name,
+      id: combination.id,
+      carts: combination.UserCart.map((el) => ({
+        comb_id: el.id,
+        pic_url: el.Picture.pic_url,
+        pattern_url: el.Pattern.pattern_url,
+        pattern_name: el.Pattern.pattern_name,
+        sock_url: el.Sock.hex,
+        qty: el.Cart.qty,
+      })),
+    };
+    console.log('combination: ', JSON.parse(JSON.stringify(combination)));
 
     return res.render('cart', combination); // передаю в хбс полученный массив с объектами
   } catch (error) {
@@ -52,6 +52,17 @@ router.post('/', async (req, res) => {
     res.sendStatus(200);
   } catch (err) {
     console.log(err);
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log('id: ', id);
+    const carts = await Cart.destroy({ where: { comb_id: id } });
+    res.json({ carts });
+  } catch (error) {
+    res.json(error);
   }
 });
 module.exports = router;

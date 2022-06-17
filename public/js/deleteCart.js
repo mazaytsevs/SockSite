@@ -1,4 +1,4 @@
-const del = document.querySelector('.favorites-container');
+const del = document.querySelector('.cart-container');
 del.addEventListener('click', async (event) => {
   event.preventDefault();
   if (event.target.nodeName === '.delete-button') {
@@ -12,7 +12,7 @@ del.addEventListener('click', async (event) => {
   const { id } = li.dataset;
   console.log('id: ', { id });
 
-  const response = await fetch(`/favorites/${id}`, {
+  const response = await fetch(`/cart/${id}`, {
     method: 'DELETE',
     // headers: {
     //   'Content-Type': 'application/json;charset=utf-8',
