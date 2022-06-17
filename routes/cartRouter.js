@@ -7,7 +7,8 @@ router.get('/', async (req, res) => {
   let combination;
   try {
     combination = await User.findOne({
-      where: {id: req.session.user.id},
+
+      where: { id: req.session.user.id },
 
       include: [
         {
@@ -43,12 +44,12 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const {color_id, pattern_id, picture_id} = req.body
-    const [ id ] = await Combination.findOrCreate({
-      where: {sock_id: color_id, pattern_id, pic_id: picture_id}
-    })
-    await Cart.create({user_id: req.session.user.id, comb_id: JSON.parse(JSON.stringify(id.id)), qty: 1})
-    res.sendStatus(200)
+    const { color_id, pattern_id, picture_id } = req.body;
+    const [id] = await Combination.findOrCreate({
+      where: { sock_id: color_id, pattern_id, pic_id: picture_id },
+    });
+    await Cart.create({ user_id: req.session.user.id, comb_id: JSON.parse(JSON.stringify(id.id)), qty: 1 });
+    res.sendStatus(200);
   } catch (err) {
     console.log(err);
   }
