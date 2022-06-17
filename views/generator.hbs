@@ -16,16 +16,16 @@
       <form class='sock-form' name='generator' method='post' action='/cart'>
         {{!-- ЦВЕТ --}}
         <h3>Выбери цвет:</h3>
-          <div class="form-check">
-            <p data-id="1" class="color color_white">
+          <div class="form-check color-choose">
+            <span data-id="1" class="color color_white">
               <input class="form-check-input" type="radio" name="color" id="color1" checked>
               <label class="form-check-label" for="color1">white</label>
-            </p>
+            </span>
             {{#each colors}}
-            <p data-id="{{id}}" class="color color_{{color}}">
+            <span data-id="{{id}}" class="color color_{{color}}">
               <input class="form-check-input" type="radio" name="color" id="color{{id}}">
               <label style="background-color: {{hex}}" class="form-check-label" for="color{{id}}">{{color}}</label>
-            </p>
+            </span>
             {{/each}}
           </div>
 
