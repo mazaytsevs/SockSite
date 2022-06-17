@@ -65,4 +65,15 @@ router.delete('/:id', async (req, res) => {
     res.json(error);
   }
 });
+
+router.post('/addfromfav', async (req, res) => {
+  try {
+    const { dataId } = req.body;
+    await Cart.create({ user_id: req.session.user.id, comb_id: JSON.parse(JSON.stringify(dataId)), qty: 1 });
+    res.sendStatus(200);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 module.exports = router;
