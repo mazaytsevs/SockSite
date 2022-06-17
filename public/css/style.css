@@ -1,4 +1,4 @@
-@import url('//db.onlinewebfonts.com/c/2deeacfe07ac4fc511a20052e1566d32?family=Kosko+Regular');
+@import url("//db.onlinewebfonts.com/c/2deeacfe07ac4fc511a20052e1566d32?family=Kosko+Regular");
 
 body {
   background-color: #ddd;
@@ -10,8 +10,10 @@ body {
 
 a,
 button,
-h1, h2, h3 {
-  font-family: "Kosko Regular", sans-serif!important;
+h1,
+h2,
+h3 {
+  font-family: "Kosko Regular", sans-serif !important;
 }
 
 .navbar {
@@ -56,7 +58,7 @@ h1, h2, h3 {
 }
 
 .navbar-nav .nav-part .nav-link.profile:hover {
-  color: rgba(0,0,0,.55);
+  color: rgba(0, 0, 0, 0.55);
   cursor: default;
 }
 
@@ -71,7 +73,7 @@ h1, h2, h3 {
 }
 
 .nav-part {
-  display: flex!important;
+  display: flex !important;
   flex-direction: row;
 }
 
@@ -86,7 +88,7 @@ a {
 }
 
 p {
-  margin-bottom: 0px!important;
+  margin-bottom: 0px !important;
 }
 
 .content {
@@ -109,12 +111,19 @@ p {
   margin-bottom: 1rem;
 }
 
+.generator-buttons {
+  display: flex;
+}
+
 .generator-buttons .btn .material-symbols-outlined {
   margin-right: 0.3rem;
 }
 
 .generator-buttons .btn {
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
 }
 
 #sock {
@@ -123,7 +132,8 @@ p {
   position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .card-img {
@@ -145,17 +155,54 @@ p {
 }
 
 #sock-pattern {
-  background-image: url('/img/patterns/transparent.png');
+  background-image: url("/img/patterns/transparent.png");
 }
 
 #sock-picture {
-  background-image: url('/img/pictures/transparent.png');
+  background-image: url("/img/pictures/transparent.png");
 }
 
 #sock-constructor,
 .sock-constructor {
-  background-image: url('/img/constructor.png');
+  background-image: url("/img/constructor.png");
 }
+
+/* ОТОБРАЖЕНИЕ РАДИОБАТТОНОВ */
+
+.socks-form .color-choose {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.socks-form .color {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.socks-form .color .form-check-label {
+  font-size: 0px;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100px;
+  border: 1px solid #333;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+  
+.color-choose .form-check-input {
+  display: none;
+}
+
+.color-choose .form-check-input:checked + .form-check-label {
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: 0 0 2px 5px #2d6efd;
+}
+
+/* ИЗБРАННОЕ И КОРЗИНА  */
 
 .cart-container,
 .favorites-container {
@@ -165,7 +212,10 @@ p {
 }
 
 .card {
-  margin: 0px 10px;
+  position: relative;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
@@ -173,7 +223,35 @@ p {
 .card-img {
   width: 100%;
   aspect-ratio: 1 / 1;
-} 
+}
+
+.card .card-body .card-buttons > * {
+  position: absolute;
+  opacity: 0;
+  padding: 7px 9px 1px;
+  border: 0;
+  border-radius: 5px;
+  transition: all 0.25s;
+}
+
+.card .card-body .card-buttons .favorites-button {
+  top: 12px;
+  left: 12px;
+}
+
+.card .card-body .card-buttons .delete-button {
+  top: 12px;
+  right: 12px;
+}
+
+.card:hover .card-body .card-buttons > * {
+  opacity: .75;
+  transition: all 0.25s;
+}
+
+.delete-button .material-symbols-outlined {
+  font-size: 1.25rem;
+}
 
 /* .card-taken {
   transform: translateX(1000px) translateY(-700px) scale(0.2);
@@ -190,14 +268,13 @@ p {
   display: flex;
 } */
 
-
 .logo {
   min-width: 30px;
   min-height: 30px;
 }
 
 .btn {
-  min-width: 48px;
+  min-width: 36px;
 }
 
 /* АДМИНСКОЕ */
