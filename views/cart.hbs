@@ -2,7 +2,7 @@
 
 <div class="cart-container">
   {{#each carts}}
-  <div class="card col-3" data-id="{{combination_id}}" name="productCart">
+  <div class="card col-3" data-id="{{comb_id}}" name="productCart">
 
     <div class="card-img">
       <div class="sock-color" style="background-color: {{sock_hex}}"></div>
@@ -13,15 +13,31 @@
 
     <div class="card-body">
       <input type="checkbox" checked>
-      <h5 class="card-title"></h5>
-      <p class="card-text"></p>
+      <h5 class="card-title">{{pattern_name}}</h5>
       <a href="#" class="btn btn-primary"></a>
-    </div>
+      {{!-- ИЗМЕНЕНИЕ КОЛИЧЕСТВА ТУТ --}}
 
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <button type="button" class="btn btn-primary" id="changeQtyPlus">-</button>
+        <span class="btn btn-primary" id ="qty-{{comb_id}}">{{qty}}</span>
+        <button type="button" class="btn btn-primary" id="changeQtyPlus">+</button>
+        <button type="button" id="favorite-{{comb_id}}">❤</button>
+        </span>
+      </div>
+      <button class="btn delete-button"type="submit" id="{{comb_id}}">Удалить</button>
   </div>
   {{/each}}
 </div>
 
 <div class="btn-group">
   <a href="#" class="btn btn-primary">Отправить Заказ</a>
+{{/each}}
 </div>
+
+
+<script defer src="/js/deleteCart.js"></script>
+
+
+
+
+

@@ -7,7 +7,9 @@ router.get('/', async (req, res) => {
   let combination;
   try {
     combination = await User.findOne({
-      where: { id: 1 },
+
+      where: { id: req.session.user.id },
+
       include: [
         {
           model: Combination,
@@ -15,13 +17,12 @@ router.get('/', async (req, res) => {
           include: [{ model: Sock }, { model: Pattern }, { model: Picture }],
         },
       ],
-      // raw: true
     });
     combination = {
       name: combination.name,
       id: combination.id,
       carts: combination.UserCart.map((el) => ({
-        combination_id: el.id,
+        comb_id: el.id,
         pic_url: el.Picture.pic_url,
         pattern_url: el.Pattern.pattern_url,
         pattern_name: el.Pattern.pattern_name,
@@ -30,7 +31,7 @@ router.get('/', async (req, res) => {
       })),
     };
     console.log('combination: ', JSON.parse(JSON.stringify(combination)));
-    // console.log('UserCart:::::::::::::',JSON.parse(JSON.stringify(combination[0].UserCart)));
+
     return res.render('cart', combination); // передаю в хбс полученный массив с объектами
   } catch (error) {
     // return res.render('error', {
@@ -41,4 +42,27 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const { color_id, pattern_id, picture_id } = req.body;
+    const [id] = await Combination.findOrCreate({
+      where: { sock_id: color_id, pattern_id, pic_id: picture_id },
+    });
+    await Cart.create({ user_id: req.session.user.id, comb_id: JSON.parse(JSON.stringify(id.id)), qty: 1 });
+    res.sendStatus(200);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log('id: ', id);
+    const carts = await Cart.destroy({ where: { comb_id: id } });
+    res.json({ carts });
+  } catch (error) {
+    res.json(error);
+  }
+});
 module.exports = router;
