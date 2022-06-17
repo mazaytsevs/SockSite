@@ -15,10 +15,12 @@ router.get('/', async (req, res) => {
         },
       ],
       });
+      // console.log(JSON.parse(JSON.stringify(favorite)));
         favorite = {
           name: favorite.name,
           id: favorite.id,
           favorites: favorite.UserFavorite.map(el=>({
+            comb_id: el.id,
             pic_url: el.Picture.pic_url,
             pattern_url: el.Pattern.pattern_url,
             pattern_name: el.Pattern.pattern_name,
