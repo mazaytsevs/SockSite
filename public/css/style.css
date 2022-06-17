@@ -211,6 +211,7 @@ p {
   flex-wrap: wrap;
 }
 
+
 .favorites-container .card-buttons {
   display: flex;
   justify-content: space-between;
