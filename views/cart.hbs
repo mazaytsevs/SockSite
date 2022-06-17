@@ -1,37 +1,43 @@
 <h1>Корзина</h1>
 
-{{#each carts}}
-<div name="productCart">
-  {{pattern_name}}
-  <div class="card" style="width: 18rem;">
-      <div class="col-6 socks-output-container">
-        {{!-- ОТОБРАЖЕНИ НОСКА --}}
-        <div id="sock">
-          {{!-- ТУТ БУДЕТ ЦВЕТ --}}
-          <div><img src="/img/patterns/{{pattern_url}}" height="600" width="600"></div>
-          <div><img src="/img/pictures/{{pic_url}}" height="600" width="600"></div>
-          <div><img src="/img/constructor.png" height="600" width="600"></div>
+<form>
+
+  {{#each carts}}
+  <div name="productCart">
+    {{pattern_name}}
+    <div class="card" style="width: 18rem;">
+        <div class="col-6 socks-output-container">
+          {{!-- ОТОБРАЖЕНИ НОСКА --}}
+          <div id="sock">
+            {{!-- ТУТ БУДЕТ ЦВЕТ --}}
+            <div><img src="/img/patterns/{{pattern_url}}" height="600" width="600"></div>
+            <div><img src="/img/pictures/{{pic_url}}" height="600" width="600"></div>
+            <div><img src="/img/constructor.png" height="600" width="600"></div>
+          </div>
         </div>
-      </div>
-    <div class="card-body">
-      <input type="checkbox" id="checkbox-{{comb_id}}">
-      {{!-- ИЗМЕНЕНИЕ КОЛИЧЕСТВА ТУТ --}}
+      <div class="card-body">
+        <input type="checkbox" id="checkbox-{{comb_id}}">
+        {{!-- ИЗМЕНЕНИЕ КОЛИЧЕСТВА ТУТ --}}
 
-      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <button type="button" class="btn btn-primary" id="changeQtyPlus">-</button>
-        <span class="btn btn-primary" id ="qty-{{comb_id}}">{{qty}}</span>
-        <button type="button" class="btn btn-primary" id="changeQtyPlus">+</button>
-        <button type="button" id="favorite-{{comb_id}}">❤</button>
-        </span>
-      </div>
-  </div>   
-      <h5 class="card-title"></h5>
-      <p class="card-text"></p>
-      <a href="#" class="btn btn-primary"></a>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <button type="button" class="btn btn-primary changeQtyMinus" id="changeQtyMinus-{{comb_id}}">-</button>
+          <span class="btn btn-primary qty" id ="qty-{{comb_id}}">{{qty}}</span>
+          <button type="button" class="btn btn-primary changeQtyPlus" id="changeQtyPlus-{{comb_id}}">+</button>
+          <button type="button" id="favorite-{{comb_id}}">❤</button>
+          </span>
+        </div>
+    </div>   
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <a href="#" class="btn btn-primary"></a>
+    </div>
   </div>
-</div>
-{{/each}}
+  {{/each}}
 
-<div class="btn-group">
-  <a href="#" class="btn btn-primary">Отправить Заказ</a>
-</div>
+  <div class="btn-group">
+    <a href="#" class="btn btn-primary">Отправить Заказ</a>
+  </div>
+
+</form>
+
+<script src="/js/changeQty.js"></script>
