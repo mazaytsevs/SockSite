@@ -14,7 +14,16 @@
         </div>
       </div>
     <div class="card-body">
-      <input type="checkbox">
+      <input type="checkbox" id="checkbox-{{comb_id}}">
+      {{!-- ИЗМЕНЕНИЕ КОЛИЧЕСТВА ТУТ --}}
+
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <button type="button" class="btn btn-primary" id="changeQtyPlus">-</button>
+        <span class="btn btn-primary" id ="qty-{{comb_id}}">{{qty}}</span>
+        <button type="button" class="btn btn-primary" id="changeQtyPlus">+</button>
+        <button type="button" id="favorite-{{comb_id}}">❤</button>
+        </span>
+      </div>
   </div>   
       <h5 class="card-title"></h5>
       <p class="card-text"></p>
