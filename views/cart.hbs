@@ -14,17 +14,17 @@
     <div class="card-body">
       <input type="checkbox" checked>
       <h5 class="card-title">{{pattern_name}}</h5>
-      <a href="#" class="btn btn-primary"></a>
       {{!-- ИЗМЕНЕНИЕ КОЛИЧЕСТВА ТУТ --}}
 
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <button type="button" class="btn btn-primary" id="changeQtyPlus">-</button>
-        <span class="btn btn-primary" id ="qty-{{comb_id}}">{{qty}}</span>
+        <span class="btn btn-primary" id="qty-{{comb_id}}">{{qty}}</span>
         <button type="button" class="btn btn-primary" id="changeQtyPlus">+</button>
         <button type="button" id="favorite-{{comb_id}}">❤</button>
         </span>
       </div>
       <button class="btn delete-button"type="submit" id="{{comb_id}}">Удалить</button>
+    </div>
   </div>
   {{/each}}
 </div>
