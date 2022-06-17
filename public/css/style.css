@@ -169,16 +169,37 @@ p {
 
 /* ОТОБРАЖЕНИЕ РАДИОБАТТОНОВ */
 
-.socks-form .color {
+.socks-form .color-choose {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.socks-form .color {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
 }
 
 .socks-form .color .form-check-label {
   font-size: 0px;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 100px;
   border: 1px solid #333;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.color-choose .form-check-input {
+  display: none;
+}
+
+.color-choose .form-check-input:checked + .form-check-label {
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: 0 0 2px 5px #2d6efd;
 }
 
 /* ИЗБРАННОЕ И КОРЗИНА  */
