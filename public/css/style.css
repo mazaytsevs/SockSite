@@ -167,6 +167,22 @@ p {
   background-image: url("/img/constructor.png");
 }
 
+/* ОТОБРАЖЕНИЕ РАДИОБАТТОНОВ */
+
+.socks-form .color {
+
+}
+
+.socks-form .color .form-check-label {
+  font-size: 0px;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100px;
+  border: 1px solid #333;
+}
+
+/* ИЗБРАННОЕ И КОРЗИНА  */
+
 .cart-container,
 .favorites-container {
   display: flex;
