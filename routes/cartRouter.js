@@ -100,4 +100,14 @@ router.get('/:id/plus', async (req, res) => {
   }
 });
 
+
+router.post('/addfromfav', async (req, res) => {
+  try {
+    const { dataId } = req.body;
+    await Cart.create({ user_id: req.session.user.id, comb_id: JSON.parse(JSON.stringify(dataId)), qty: 1 });
+    res.sendStatus(200);
+  } catch (err) {
+    console.log(err);
+  }
+});
 module.exports = router;
