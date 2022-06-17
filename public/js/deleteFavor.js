@@ -1,7 +1,7 @@
-const del = document.querySelector('.delForm');
+const del = document.querySelector('.favorites-container');
 del.addEventListener('click', async (event) => {
   event.preventDefault();
-  if (event.target.nodeName === 'BUTTON') {
+  if (event.target.nodeName === '.delete-button') {
     const mar = event.target.closest('[data-id]');
     console.log(mar);
   }

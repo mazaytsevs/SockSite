@@ -1,7 +1,9 @@
 <h1>Корзина</h1>
-
+<div class="cart-container">
 {{#each carts}}
-<div name="productCart">
+
+
+<div name="productCart" data-id="{{comb_id}}">
   {{pattern_name}}
   <div class="card" style="width: 18rem;">
       <div class="col-6 socks-output-container">
@@ -27,16 +29,16 @@
   </div>   
       <h5 class="card-title"></h5>
       <p class="card-text"></p>
-      <a href="#" class="btn btn-primary"></a>
        <a href="#" class="btn btn-primary">Отправить Заказ</a>
-       <button class="btn "type="submit" id="">Удалить</button>
+       <button class="btn delete-button"type="submit" id="{{comb_id}}">Удалить</button>
   </div>
 </div>
 {{/each}}
-
-<div class="btn-group">
-  <a href="#" class="btn btn-primary">Отправить Заказ</a>
 </div>
+
+
+<script defer src="/js/deleteCart.js"></script>
+
 
 
 
