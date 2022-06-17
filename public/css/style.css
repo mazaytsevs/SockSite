@@ -1,9 +1,17 @@
+@import url('//db.onlinewebfonts.com/c/2deeacfe07ac4fc511a20052e1566d32?family=Kosko+Regular');
+
 body {
   background-color: #ddd;
   font-family: "PT Sans", sans-serif;
   color: #111;
   font-size: 16px;
   margin: 0px;
+}
+
+a,
+button,
+h1, h2, h3 {
+  font-family: "Kosko Regular", sans-serif!important;
 }
 
 .navbar {
@@ -16,8 +24,44 @@ body {
   max-width: 1296px;
 }
 
+.row {
+  justify-content: space-around;
+}
+
+.container-center {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .navbar-collapse {
   width: 100%;
+}
+
+.nav-part .nav-link,
+.nav-part .nav-buttons,
+.nav-part .nav-buttons .btn {
+  display: flex;
+}
+
+.nav-part .nav-buttons .btn {
+  margin-left: 0.5rem;
+  padding-right: 16px;
+}
+
+.navbar-collapse .navbar-nav .nav-part .nav-link:hover {
+  color: #999999;
+  transition: all 0.2s;
+}
+
+.navbar-nav .nav-part .nav-link.profile:hover {
+  color: rgba(0,0,0,.55);
+  cursor: default;
+}
+
+.nav-part .material-symbols-outlined {
+  margin-right: 0.2rem;
 }
 
 .navbar-nav {
@@ -65,15 +109,33 @@ p {
   margin-bottom: 1rem;
 }
 
+.generator-buttons .btn .material-symbols-outlined {
+  margin-right: 0.3rem;
+}
+
+.generator-buttons .btn {
+  
+}
+
 #sock {
   width: 600px;
   height: 600px;
   position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;}
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
 
-#sock > * {
+.card-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+#sock > *,
+.card-img > * {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -87,21 +149,33 @@ p {
 }
 
 #sock-picture {
-  background-image: url('/img/pictures/picture3.png');
+  background-image: url('/img/pictures/transparent.png');
 }
 
-#sock-constructor {
+#sock-constructor,
+.sock-constructor {
   background-image: url('/img/constructor.png');
 }
 
-/*
+.cart-container,
+.favorites-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .card {
   margin: 0px 10px;
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
 
-.card-taken {
+.card-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+} 
+
+/* .card-taken {
   transform: translateX(1000px) translateY(-700px) scale(0.2);
   transition: transform 0.5s;
 }
@@ -114,8 +188,8 @@ p {
 
 .navbar-brand {
   display: flex;
-}
-*/
+} */
+
 
 .logo {
   min-width: 30px;

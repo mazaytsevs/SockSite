@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
         pic_url: el.Picture.pic_url,
         pattern_url: el.Pattern.pattern_url,
         pattern_name: el.Pattern.pattern_name,
-        sock_url: el.Sock.hex,
+        sock_hex: el.Sock.hex,
         qty: el.Cart.qty,
       })),
     };
