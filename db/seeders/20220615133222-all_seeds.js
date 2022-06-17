@@ -127,6 +127,43 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        pattern_name: 'Обезьянка',
+        pattern_url: 'pattern8.png',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        pattern_name: 'Арбузики',
+        pattern_url: 'pattern9.png',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        pattern_name: 'Danger',
+        pattern_url: 'pattern7.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        pattern_name: 'Черепки',
+        pattern_url: 'pattern10.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        pattern_name: 'Сердечки',
+        pattern_url: 'pattern11.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        pattern_name: 'Love',
+        pattern_url: 'pattern12.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+
     ];
     const combinations = [
       {
