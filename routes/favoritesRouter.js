@@ -17,25 +17,21 @@ router.get('/', async (req, res) => {
           include: [{ model: Sock }, { model: Pattern }, { model: Picture }],
         },
       ],
-
-      // raw: true
-    });
-    // console.log('combination::::::::::::::', JSON.parse(JSON.stringify(combination.UserCart[0])));
-    favorite = {
-      name: favorite.name,
-      id: favorite.id,
-      favorites: favorite.UserFavorite.map((el) => ({
-        comb_id: el.id,
-        pic_url: el.Picture.pic_url,
-        pattern_url: el.Pattern.pattern_url,
-        pattern_name: el.Pattern.pattern_name,
-        sock_url: el.Sock.hex,
-        qty: el.Favorite.qty,
-      })),
-    };
-    console.log('favorites: ', JSON.parse(JSON.stringify(favorite)));
-    // console.log('UserCart:::::::::::::',JSON.parse(JSON.stringify(favorite[0].UserCart)));
-
+      });
+      // console.log(JSON.parse(JSON.stringify(favorite)));
+        favorite = {
+          name: favorite.name,
+          id: favorite.id,
+          favorites: favorite.UserFavorite.map(el=>({
+            comb_id: el.id,
+            pic_url: el.Picture.pic_url,
+            pattern_url: el.Pattern.pattern_url,
+            pattern_name: el.Pattern.pattern_name,
+            sock_url: el.Sock.hex,
+            qty: el.Favorite.qty
+          }))
+        }
+        console.log('favorites: ', JSON.parse(JSON.stringify(favorite)));
     return res.render('favorites', favorite); // передаю в хбс полученный массив с объектами
   } catch (error) {
     // return res.render('error', {
