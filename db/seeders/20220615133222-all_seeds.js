@@ -1,24 +1,33 @@
+const bcrypt = require('bcrypt');
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     const users = [
       {
         name: 'Marina Noname',
         email: '123@yandex.ru',
-        password: '123',
+        password: await bcrypt.hash('123', 10),
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         name: 'Irina Socks',
         email: '2fc@yandex.ru',
-        password: '123',
+        password: await bcrypt.hash('123', 10),
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         name: 'July Kuku',
         email: 'vcv@yandex.ru',
-        password: '123',
+        password: await bcrypt.hash('123', 10),
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: 'zookie',
+        email: 'zookie@mail.ru',
+        password: await bcrypt.hash('123', 10),
         createdAt: new Date(),
         updatedAt: new Date(),
       },

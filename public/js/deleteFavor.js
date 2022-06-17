@@ -1,4 +1,4 @@
-const del = document.querySelector('#delForm');
+const del = document.querySelector('.delForm');
 del.addEventListener('click', async (event) => {
   event.preventDefault();
   if (event.target.nodeName === 'BUTTON') {
