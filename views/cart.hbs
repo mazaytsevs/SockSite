@@ -1,43 +1,48 @@
 <h1>Корзина</h1>
 
-<div class="cart-container">
-  {{#each carts}}
-  <div class="card col-3" data-id="{{comb_id}}" name="productCart">
+<form>
 
-    <div class="card-img">
-      <div class="sock-color" style="background-color: {{sock_hex}}"></div>
-      <div class="sock-pattern" style="background-image: url('/img/patterns/{{pattern_url}}')"></div>
-      <div class="sock-picture" style="background-image: url('/img/pictures/{{pic_url}}')"></div>
-      <div class="sock-constructor"></div>
-    </div>
+  <div class="cart-container">
+    {{#each carts}}
+    <div class="card col-3" data-id="{{comb_id}}" name="productCart">
 
-    <div class="card-body">
-      <input type="checkbox" checked>
-      <h5 class="card-title">{{pattern_name}}</h5>
-      {{!-- ИЗМЕНЕНИЕ КОЛИЧЕСТВА ТУТ --}}
-
-      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <button type="button" class="btn btn-primary" id="changeQtyPlus">-</button>
-        <span class="btn btn-primary" id="qty-{{comb_id}}">{{qty}}</span>
-        <button type="button" class="btn btn-primary" id="changeQtyPlus">+</button>
-        </span>
+      <div class="card-img">
+        <div class="sock-color" style="background-color: {{sock_hex}}"></div>
+        <div class="sock-pattern" style="background-image: url('/img/patterns/{{pattern_url}}')"></div>
+        <div class="sock-picture" style="background-image: url('/img/pictures/{{pic_url}}')"></div>
+        <div class="sock-constructor"></div>
       </div>
 
-      <div class="card-buttons">
-        <button class="btn btn-outline-dark favorites-button" type="button" id="favorite-{{comb_id}}"><span class="material-symbols-outlined">bookmark_add</span></button>
-        <button class="btn btn-outline-danger delete-button" type="submit" id="{{comb_id}}"><span class="material-symbols-outlined">delete</span></button>
+      <div class="card-body">
+        <input type="checkbox" checked>
+        <h5 class="card-title">{{pattern_name}}</h5>
+        {{!-- ИЗМЕНЕНИЕ КОЛИЧЕСТВА ТУТ --}}
+
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <button type="button" class="btn btn-primary" id="changeQtyPlus">-</button>
+          <span class="btn btn-primary" id="qty-{{comb_id}}">{{qty}}</span>
+          <button type="button" class="btn btn-primary" id="changeQtyPlus">+</button>
+          </span>
+        </div>
+
+        <div class="card-buttons">
+          <button class="btn btn-outline-dark favorites-button addToFavorite" type="button" id="favorite-{{comb_id}}"><span class="material-symbols-outlined">bookmark_add</span></button>
+          <button class="btn btn-outline-danger delete-button" type="submit" id="{{comb_id}}"><span class="material-symbols-outlined">delete</span></button>
+        </div>
       </div>
     </div>
+    {{/each}}
   </div>
-  {{/each}}
-</div>
 
-<div class="btn-group">
-  <a href="#" class="btn btn-primary">Отправить Заказ</a>
-</div>
+  <div class="btn-group">
+    <a href="#" class="btn btn-primary">Отправить Заказ</a>
+  </div>
 
+</form>
 
-<script defer src="/js/deleteCart.js"></script>
+{{!-- <script defer src="/js/deleteCart.js"></script> --}}
+<script src="/js/addCombo.js"></script>
+
 
 
 

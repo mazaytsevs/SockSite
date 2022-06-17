@@ -1,7 +1,7 @@
 const formForAdding = document.forms[0];
 
 formForAdding.addEventListener('click', async (event) => {
-
+console.log();
   if (event.target.id === "addToFavorite" || event.target.id === "addToCart") {
 
     event.preventDefault();
