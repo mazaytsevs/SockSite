@@ -1,27 +1,26 @@
 <h1>Корзина</h1>
 
-{{#each carts}}
-<div name="productCart">
-  {{pattern_name}}
-  <div class="card" style="width: 18rem;">
-      <div class="col-6 socks-output-container">
-        {{!-- ОТОБРАЖЕНИ НОСКА --}}
-        <div id="sock">
-          {{!-- ТУТ БУДЕТ ЦВЕТ --}}
-          <div><img src="/img/patterns/{{pattern_url}}" height="600" width="600"></div>
-          <div><img src="/img/pictures/{{pic_url}}" height="600" width="600"></div>
-          <div><img src="/img/constructor.png" height="600" width="600"></div>
-        </div>
-      </div>
+<div class="cart-container">
+  {{#each carts}}
+  <div class="card col-3" data-id="{{combination_id}}" name="productCart">
+
+    <div class="card-img">
+      <div class="sock-color" style="background-color: {{sock_hex}}"></div>
+      <div class="sock-pattern" style="background-image: url('/img/patterns/{{pattern_url}}')"></div>
+      <div class="sock-picture" style="background-image: url('/img/pictures/{{pic_url}}')"></div>
+      <div class="sock-constructor"></div>
+    </div>
+
     <div class="card-body">
-      <input type="checkbox">
-  </div>   
+      <input type="checkbox" checked>
       <h5 class="card-title"></h5>
       <p class="card-text"></p>
       <a href="#" class="btn btn-primary"></a>
+    </div>
+
   </div>
+  {{/each}}
 </div>
-{{/each}}
 
 <div class="btn-group">
   <a href="#" class="btn btn-primary">Отправить Заказ</a>

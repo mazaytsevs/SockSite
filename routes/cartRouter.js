@@ -21,10 +21,11 @@ router.get('/', async (req, res) => {
       name: combination.name,
       id: combination.id,
       carts: combination.UserCart.map((el) => ({
+        combination_id: el.id,
         pic_url: el.Picture.pic_url,
         pattern_url: el.Pattern.pattern_url,
         pattern_name: el.Pattern.pattern_name,
-        sock_url: el.Sock.hex,
+        sock_hex: el.Sock.hex,
         qty: el.Cart.qty,
       })),
     };
