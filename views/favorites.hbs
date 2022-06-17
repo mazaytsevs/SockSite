@@ -1,28 +1,26 @@
-
 <h1>Избранное</h1>
+
 <div class="favorites-container">
+  {{#each favorites}}
+  <div class="card col-3" data-id="{{comb_id}}" name="productCart">
 
-{{#each favorites}}
-
-  <div class="product" name="productCart" data-id="{{comb_id}}">
-
-    <div class="col-3 socks-output-container">
-      {{!-- ОТОБРАЖЕНИ НОСКА --}}
-      <div id="sock">
-        {{!-- ТУТ БУДЕТ ЦВЕТ --}}
-        <div><img src="/img/patterns/{{pattern_url}}" height="600" width="600"></div>
-        <div><img src="/img/pictures/{{pic_url}}" height="600" width="600"></div>
-        <div><img src="/img/constructor.png" height="600" width="600"></div>
-      </div>
+    <div class="card-img">
+      <div class="sock-color" style="background-color: {{sock_hex}}"></div>
+      <div class="sock-pattern" style="background-image: url('/img/patterns/{{pattern_url}}')"></div>
+      <div class="sock-picture" style="background-image: url('/img/pictures/{{pic_url}}')"></div>
+      <div class="sock-constructor"></div>
     </div>
+
     <div class="card-body">
       <h5 class="card-title">{{pattern_name}}</h5>
-      <p class="card-text"></p>
-      <a href="#" class="btn btn-primary">В Корзину</a>
+    </div>
+
+    <div class="card-buttons">
       <button class="btn btn-outline-danger delete-button" type="submit" id="{{comb_id}}"><span class="delete-button material-symbols-outlined">delete</span></button>
+      <button class="btn btn-outline-dark add-to-cart-button" type="button" id="favorite-{{comb_id}}"><span class="add-to-cart-button material-symbols-outlined">add_shopping_cart</span><span class="add-to-cart-button text">В корзину</span></button>
     </div>
   </div>
-{{/each}}
+  {{/each}}
 
 </div>
 
