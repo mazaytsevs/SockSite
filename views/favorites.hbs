@@ -1,9 +1,9 @@
 
 <h1>Избранное</h1>
-
 {{#each favorites}}
+<form class="delForm" data-id="{{comb_id}}">
 <div name="productCart">
-  <div class="col-6 socks-output-container">
+  <div class="col-6 socks-output-container" >
       {{!-- ОТОБРАЖЕНИ НОСКА --}}
       <div id="sock">
         {{!-- ТУТ БУДЕТ ЦВЕТ --}}
@@ -16,9 +16,24 @@
       <h5 class="card-title">{{pattern_name}}</h5>
       <p class="card-text"></p>
       <a href="#" class="btn btn-primary">В Корзину</a>
-      <a href="#" class="btn btn-primary">Удалить</a>
+      <button class="btn "type="submit" id="{{comb_id}}">Удалить</button>
     </div>
   </div>
 </div>
 {{/each}}
+</form>
+
+
+
+<script defer src="/js/deleteFavor.js"></script>
+
+
+
+
+
+
+
+
+
+
 
