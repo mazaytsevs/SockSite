@@ -269,6 +269,13 @@ p {
   font-size: 1.25rem;
 }
 
+.container .order-send {
+  position: fixed;
+  right: 10rem;
+  bottom: 3rem;
+  font-size: 2rem;
+}
+
 /* .card-taken {
   transform: translateX(1000px) translateY(-700px) scale(0.2);
   transition: transform 0.5s;
