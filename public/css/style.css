@@ -16,8 +16,44 @@ body {
   max-width: 1296px;
 }
 
+.row {
+  justify-content: space-around;
+}
+
+.container-center {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .navbar-collapse {
   width: 100%;
+}
+
+.nav-part .nav-link,
+.nav-part .nav-buttons,
+.nav-part .nav-buttons .btn {
+  display: flex;
+}
+
+.nav-part .nav-buttons .btn {
+  margin-left: 0.5rem;
+  padding-right: 16px;
+}
+
+.navbar-collapse .navbar-nav .nav-part .nav-link:hover {
+  color: #999999;
+  transition: all 0.2s;
+}
+
+.navbar-nav .nav-part .nav-link.profile:hover {
+  color: rgba(0,0,0,.55);
+  cursor: default;
+}
+
+.nav-part .material-symbols-outlined {
+  margin-right: 0.2rem;
 }
 
 .navbar-nav {
