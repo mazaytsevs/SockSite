@@ -19,11 +19,26 @@ container.addEventListener('click', async (event) => {
   // Изменение количества
 
   if (event.target.classList.contains('qty-minus')) {
-    const comb_id = event.target.closest('.card').dataset.id;
-    console.log('comb_id: ', comb_id);
+    const card = event.target.closest('.card');
+    const comb_id = card.dataset.id;
+    const qty = card.querySelector('.qty');
     const response = await fetch(`/cart/${comb_id}/minus`, { method: 'GET' });
     if (response.ok) {
       await response;
+      qty.innerText = +qty.innerText - 1;
     }
   }
+
+  if (event.target.classList.contains('qty-plus')) {
+    const card = event.target.closest('.card');
+    const comb_id = card.dataset.id;
+    const qty = card.querySelector('.qty');
+    const response = await fetch(`/cart/${comb_id}/plus`, { method: 'GET' });
+    if (response.ok) {
+      await response;
+      qty.innerText = +qty.innerText + 1;
+    }
+  }
+
+
 });
