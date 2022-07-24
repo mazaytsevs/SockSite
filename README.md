@@ -14,28 +14,22 @@ ___
 <br/>
 <br/>
 ___
+
 ## Путь пользователя:
-- Если пользователь не зарегистрирован/авторизирован, начать игру он не может. Если пользователь авторизован, он увидит форму ниже. 
+- Чтобы пользоваться функционалом сайта, пользователю необходимо зарегестрироваться в системе или авторизоваться. 
 
-![start screen](https://github.com/mazaytsevs/SockSite/blob/main/screens/reg.png?raw=true)
-- В приложении используется Loader для тайм-аута при обращении к базе данных.
-
-
-![loader](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/03_loader.png?raw=true)
-- Основная механика игры заключается в сортировке разных видов отходов по бакам. Осуществлено с помощью технологии Drag&Drop. В интерфейсе игры также присутствует интерактивная шкала прогресса, "говорящий" персонаж, диалоги, бонусы и ачивки.
+![auth](https://github.com/mazaytsevs/SockSite/blob/main/screens/reg.png?raw=true)
+- На сайте осуществлена возможность создания уникального дизайна носков. На выбор имеются разные цвета, узоры и паттерны.
 
 
-![game](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/04_game.png?raw=true)
-- Конец игры обозначается бонусной статичной сценой!
+![generator](https://github.com/mazaytsevs/SockSite/blob/main/screens/gen1.png?raw=true)
+![generator](https://github.com/mazaytsevs/SockSite/blob/main/screens/gen2.png?raw=true)
+
+- Из генератора можно добавить созданный дизайн в избранное.
 
 
-![final](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/06_fin2.png?raw=true)
-- Но это не всё! В игре есть два режима. Ниже вы увидите режим "конвейер", где единицы мусора движутся слева направо как на конвейере, а задача игрока - на скорость отсортировать мусор.
+![favourires](https://github.com/mazaytsevs/SockSite/blob/main/screens/fav.png?raw=true)
+- И, конечно же, добавить созданный дизайн в корзину. Это можно сделать как из генератора, так и из вкладки "избранное".
 
 
-![hardmode_start](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/07hardmode.png?raw=true)
-![hardmode](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/08hardmode2.png?raw=true)
-- По истечении времени в режиме "конвейер" выходит модальное окно с таблицей лидеров. Пока что в ней только Alex, пора составить ему конкуренцию!
-
-
-![hardmode_modal](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/09hardmode3.png?raw=true)
+![cart](https://github.com/mazaytsevs/SockSite/blob/main/screens/cart.png?raw=true)
