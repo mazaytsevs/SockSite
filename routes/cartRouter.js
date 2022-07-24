@@ -65,4 +65,49 @@ router.delete('/:id', async (req, res) => {
     res.json(error);
   }
 });
+
+router.get('/:id/minus', async (req, res) => {
+  const comb_id = req.params.id;
+  const user_id = req.session.user.id;
+  try {
+    const cart = await Cart.findOne({ where: { user_id, comb_id } });
+    console.log(JSON.parse(JSON.stringify(cart)));
+    if (cart.qty > 1) {
+      cart.qty -= 1;
+      cart.save();
+      res.sendStatus(200);
+    }
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+router.get('/:id/plus', async (req, res) => {
+  const comb_id = req.params.id;
+  const user_id = req.session.user.id;
+  try {
+    const cart = await Cart.findOne({ where: { user_id, comb_id } });
+    console.log(JSON.parse(JSON.stringify(cart)));
+    if (cart.qty > 1) {
+      cart.qty += 1;
+      cart.save();
+      res.sendStatus(200);
+    }
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+
+router.post('/addfromfav', async (req, res) => {
+  try {
+    const { dataId } = req.body;
+    await Cart.create({ user_id: req.session.user.id, comb_id: JSON.parse(JSON.stringify(dataId)), qty: 1 });
+    res.sendStatus(200);
+  } catch (err) {
+    console.log(err);
+  }
+});
 module.exports = router;
