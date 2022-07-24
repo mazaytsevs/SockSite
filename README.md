@@ -10,9 +10,9 @@ ___
 <img align="left" alt="NodeJS" width="30px" src="https://img.icons8.com/fluency/344/node-js.png" />
 <img align="left" alt="PostgreSQL" width="30px" src="https://img.icons8.com/color/344/postgreesql.png" />
 <img align="left" alt="PhotoShop" width="30px" src="https://img.icons8.com/color/344/adobe-photoshop--v1.png" />
+<br/>
+<br/>
 
-<br/>
-<br/>
 ___
 
 ## Путь пользователя:
