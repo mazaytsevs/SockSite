@@ -8,6 +8,7 @@ ___
 <img align="left" alt="CSS" width="60px" src="https://img.icons8.com/color/344/css3.png" />
 <img align="left" alt="JavaScript" width="60px" src="https://img.icons8.com/color/344/javascript--v2.png" />
 <img align="left" alt="NodeJS" width="60px" src="https://img.icons8.com/fluency/344/node-js.png" />
+<img align="left" alt="Express" width="60px" src="https://stickker.net/wp-content/uploads/2016/01/express.svg_.png" />
 <img align="left" alt="PostgreSQL" width="60px" src="https://img.icons8.com/color/344/postgreesql.png" />
 <img align="left" alt="PhotoShop" width="60px" src="https://img.icons8.com/color/344/adobe-photoshop--v1.png" />
 <br/>
